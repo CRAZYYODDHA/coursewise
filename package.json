@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "start:api": "ts-node server.ts",
+    "start": "cross-env NODE_ENV=production npm run build && node --experimental-specifier-resolution=node --loader ts-node/esm server.ts",
     "dev:all": "concurrently \"npm run dev\" \"npm run start:api\""
   },
   "keywords": [
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@types/node": "^22.14.0",
     "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
     "ts-node": "^10.9.2",
     "typescript": "~5.7.2",
     "vite": "^6.2.0"
